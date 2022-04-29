@@ -14,3 +14,21 @@
 color: rgb(243, 0, 0);
 background-color: white;
 }
+.box {
+  color: rgb(255, 255, 255);
+  box-shadow: 2px 2px;
+}
+.box h1 {
+  text-align: center;
+}
+.fam {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+.but {
+  float: right;
+  margin-bottom: 20px;
+}
+.close {
+  border-radius: 50%;
+}

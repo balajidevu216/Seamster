@@ -5,9 +5,9 @@
     &nbsp;
     <a href="http://localhost:4200/orders/index">ORDERS LIST</a>
     &nbsp;
-    <a href="http://localhost:4200/products/addproduct">ADD PRODUCT</a>
+    <a (click)="openDialog()">ADD PRODUCT</a>
     &nbsp;
-    <a href="http://localhost:4200/orders/addorder">ADD ORDER</a>
+    <a (click)="openDialogg()">ADD ORDER</a>
     </div>
     
 <br>
@@ -22,12 +22,15 @@
       </thead>
     
       <tbody>
+        <ng-container>
+          <mat-spinner *ngIf="loading" id="loading"></mat-spinner>
+        </ng-container>
         <tr *ngFor="let product of products">
      <!-- <td>{{ employee.id }}</td> -->
           <td>{{ product.Name }}</td>
           <td>{{ product.type }}</td>
           <td>
-          <a href="#" [routerLink]="['/products/',product.id,product.ProductId, 'view']" class="btn btn-outline-success">View</a>
+          <a href="#" [routerLink]="['/products/',product.id,product.ProductId, 'view']"><span class='bi bi-eye-slash'></span></a>
           </td>
         </tr>
       </tbody>

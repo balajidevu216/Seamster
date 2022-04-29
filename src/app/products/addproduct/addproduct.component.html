@@ -1,12 +1,84 @@
 <div class="container-fluid">
+
   <div class="header mt-1 p-1">
-        <h1>SEAMSTER PRODUCTS</h1>
+        <h1>ADD PRODUCT</h1>
   <a href="http://localhost:4200/products/index">PRODUCTS LIST</a>
   &nbsp;
   <a href="http://localhost:4200/orders/index">ORDERS LIST</a>
   &nbsp;
-    <a href="http://localhost:4200/products/addproduct">ADD PRODUCT</a>
+    <a disabled>ADD PRODUCT</a>
   &nbsp;
-  <a href="http://localhost:4200/orders/addorder">ADD ORDER</a>
+  <a disabled>ADD ORDER</a>
   </div>
+<hr>
+  
+    <div class="box">
+
+    <div class="fam">      
+        <form [formGroup]="form" (ngSubmit)="submit()">    
+             
+           <!-- <div class="form-group">
+
+                <label for="id">id</label>
+                <input 
+                    formControlName="id"
+                    id="id" 
+                    type="text" 
+                    class="form-control">
+                <div *ngIf="f.id.touched && f.id.invalid" class="alert alert-danger">
+                    <div *ngIf="f.id.errors?.required">Id is required.</div>
+                </div>
+            </div>
+        --> 
+            
+            <div class="form-group">
+                <label for="name"><i>Product Name</i></label>
+                <input 
+                    formControlName="name"
+                    id="name" 
+                    type="text" 
+                    class="form-control">
+    
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                    <div *ngIf="f.name.errors?.required">Product Name is required.</div>
+                    <div *ngIf="f.name.errors?.pattern">Enter only characters.</div>
+                    <div *ngIf="f.name.errors?.pattern">only characters are allowed.</div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for=""><i>Product Type</i></label>
+                <select
+                formControlName="type"
+                id="type"    
+                type="text" 
+                    class="form-control">
+                    <option value="Backend Developer">Backend Developer</option>
+                <option value="Data Analyst">Data Analyst</option>    
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="FullStack Developer">FullStack Developer</option>
+                <option value="HR">HR</option> 
+                <option value="Project Manager">Project Manager</option>
+                <option value="System Admin">System Admin</option>
+                <option value="Team Leader">Team Leader</option>
+                <option value="QA">QA</option>
+                </select>
+                <div *ngIf="f.type.touched && f.type.invalid" class="alert alert-danger">
+                    <div *ngIf="f.type.errors?.required">Product Type is required.</div>
+                </div>
+                </div>
+            
+        <br>
+        
+        <div class="but">
+            <a href="http://localhost:4200/products/index" class="btn btn-primary">Back</a>
+            &nbsp;&nbsp;
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+        </div> 
+    </form>
+ </div>   
+ <br>
+<br>
+<br>
+</div>
 </div>
