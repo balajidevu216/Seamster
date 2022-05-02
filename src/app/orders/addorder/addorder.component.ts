@@ -13,7 +13,7 @@ export class AddorderComponent implements OnInit {
 
   form: FormGroup;
   
-  constructor(public productsService: OrdersService,
+  constructor(public ordersService: OrdersService,
               private router: Router) { }
 	
 
@@ -31,7 +31,7 @@ export class AddorderComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
-    this.productsService.create(this.form.value).subscribe(res => {
+    this.ordersService.create(this.form.value).subscribe(res => {
          console.log('Post created successfully!');
          this.router.navigateByUrl('products/index');
          confirm("Record created successfully!");

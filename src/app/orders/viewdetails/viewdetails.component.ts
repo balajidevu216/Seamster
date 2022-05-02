@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../products.service';
+import { OrdersService } from '../orders.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Products } from '../products';
+import { Orders } from '../orders';
 
 @Component({
   selector: 'app-viewdetails',
@@ -9,23 +9,21 @@ import { Products } from '../products';
   styleUrls: ['./viewdetails.component.css']
 })
 export class ViewdetailsComponent implements OnInit {
-
   id:string;
-  products:Products;
+  orders:Orders;
   ProductId: string;
 
   constructor(
-    public productsService: ProductsService,
+    public ordersService: OrdersService,
     private route: ActivatedRoute,
-    private router: Router
-) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.ProductId = this.route.snapshot.params['ProductId'];
     this.id = this.route.snapshot.params['id'];
-this.productsService.find(this.id,this.ProductId).subscribe((data: Products)=>{
+this.ordersService.find(this.id,this.ProductId).subscribe((data: Orders)=>{
   console.log('data#', data);
-      this.products=data;
+      this.orders=data;
   });
 }
 }

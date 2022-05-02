@@ -1,0 +1,8 @@
+.box {
+    color : white;
+    background-image:linear-gradient(to right,red blue);
+    
+}
+.close {
+    float: right;
+}
