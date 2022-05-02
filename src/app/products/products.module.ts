@@ -7,11 +7,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IndexComponent } from './index/index.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 
 @NgModule({
   declarations: [
        IndexComponent,
-       AddproductComponent
+       AddproductComponent,
+       ViewdetailsComponent
   ],
   imports: [
     ProductsRoutingModule,
