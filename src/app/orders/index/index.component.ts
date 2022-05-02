@@ -13,6 +13,7 @@ import { AddproductComponent } from 'src/app/products/addproduct/addproduct.comp
 })
 export class IndexComponent implements OnInit {
   orders: Orders[] = [];
+  loading: boolean = false;
 
   constructor(public ordersService: OrdersService,
     private route: ActivatedRoute,
@@ -31,7 +32,15 @@ export class IndexComponent implements OnInit {
 this.ordersService.getAll().subscribe((data: Orders[])=>{
       this.orders = data;
       console.log(this.orders);
-  })
-};
+  });
+  {
+    this.loading = true;
+    this.ordersService.getAll().subscribe((data:Orders[])=>{
+      this.loading = false;
+          this.orders = data;
+          console.log(this.orders);
+      });
+     }
+}
 
 }

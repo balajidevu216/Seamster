@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersRoutingModule } from './orders-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { IndexComponent } from './index/index.component';
 import { AddorderComponent } from './addorder/addorder.component';
 
@@ -15,6 +17,7 @@ import { AddorderComponent } from './addorder/addorder.component';
     OrdersRoutingModule,
     CommonModule,
 	  FormsModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule
   ]
 })

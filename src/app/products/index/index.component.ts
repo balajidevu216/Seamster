@@ -20,7 +20,6 @@ loading: boolean = false;
     private router: Router,
     private dialogRef : MatDialog) {}
 
-
     openDialog(){
       this.dialogRef.open(AddproductComponent);
     }

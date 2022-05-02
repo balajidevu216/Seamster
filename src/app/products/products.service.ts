@@ -32,6 +32,12 @@ create(products): Observable<Products[]> {
     catchError(this.errorHandler)
   )
 } 
+find(id, productsId): Observable<Products> {
+  return this.httpClient.get<Products>(this.apiURL + '/GetProductsById/' + id +'/' + productsId)
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
 
 errorHandler(error) {
   let errorMessage = '';

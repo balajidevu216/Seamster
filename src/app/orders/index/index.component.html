@@ -21,6 +21,9 @@
       </thead>
     
       <tbody>
+        <ng-container>
+          <mat-spinner *ngIf="loading" id="loading"></mat-spinner>
+        </ng-container>
         <tr *ngFor="let order of orders">
      <!-- <td>{{ employee.id }}</td> -->
           <td>{{ order.Name }}</td>
