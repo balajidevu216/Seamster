@@ -23,6 +23,7 @@ th,td {
     padding: 10px;
     text-align: center;
     font-size: small;
+    color: rgb(0, 0, 0);
 }
 #loading{
     position: absolute;
@@ -41,3 +42,28 @@ th,td {
     @keyframes spin {
       100% { transform: rotate(360deg); }
     }
+    
+
+    th{ 
+        position: sticky;
+        top: 0px;
+        background-color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    .table-wrapper {
+        max-height: 300px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin: 0px;
+        border: 1px solid #ccc;
+    }
+    .outer-wrapper {
+        margin: 10px;
+        border-radius: 5px;
+    }
+    
+    
+    

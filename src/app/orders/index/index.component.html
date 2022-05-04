@@ -9,13 +9,19 @@
     &nbsp;
     <a (click)="openDialogg()">ADD ORDER</a>
     </div>
+
+  <script>
+      let dat = new Date("2015-03-25");
+      document.getElementById("orderdate").innerHTML = dat;
+  </script>
+
 <br>
     <table class="table table-bordered">
         <thead>
         <tr>
           <!--<th>id</th>--> 
-          <th>ORDER NAME</th>
-          <th>ORDER TYPE</th>
+          <th>ORDER NO</th>
+          <th>ORDER DATE</th>
           <th>ACTION</th>
         </tr>
       </thead>
@@ -25,12 +31,10 @@
           <mat-spinner *ngIf="loading" id="loading"></mat-spinner>
         </ng-container>
         <tr *ngFor="let order of orders">
-     <!-- <td>{{ employee.id }}</td> -->
-          <td>{{ order.Name }}</td>
-          <td>{{ order.type }}</td>
-          <td>
-            <a href="#" [routerLink]="['/orders/',order.id,order.OrderId, 'view']" class="btn btn-outline-success">View</a>
-          </td>
+     <!-- <td>{{ order.id }}</td> -->
+          <td>{{ order.Number }}</td>
+          <td><input id="orderdate" name="orderdate" formControlName="orderdate" class="form-control"></td>
+          <td><a href="#" [routerLink]="['/orders/',order.id,order.OrderId, 'viewdetails']" class="btn btn-outline-success">View</a></td>
         </tr>
       </tbody>
       </table>

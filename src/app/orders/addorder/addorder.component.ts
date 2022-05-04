@@ -4,6 +4,7 @@ import { OrdersService } from '../orders.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddproductComponent } from 'src/app/products/addproduct/addproduct.component';
+
 @Component({
   selector: 'app-addorder',
   templateUrl: './addorder.component.html',
@@ -18,10 +19,8 @@ export class AddorderComponent implements OnInit {
 	
 
   ngOnInit(): void {
-
     this.form = new FormGroup({
     //  id : new FormControl('', [Validators.required]),
-      type: new FormControl('', [Validators.required]),
     });
   }
   

@@ -1,5 +1,6 @@
 export interface Orders {
     id:string;
-    Name:string;
+    Number:string;
     Type:string;
+    Orderdate:string;
 }

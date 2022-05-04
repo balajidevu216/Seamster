@@ -11,7 +11,7 @@
     </div>
     
 <br>
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
         <tr>
           <!--<th>id</th>--> 
@@ -25,7 +25,7 @@
         <ng-container>
           <mat-spinner *ngIf="loading" id="loading"></mat-spinner>
         </ng-container>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products"class="table-striped table-bordered table-hover table-wrapper">
      <!-- <td>{{ employee.id }}</td> -->
           <td>{{ product.Name }}</td>
           <td>{{ product.type }}</td>
