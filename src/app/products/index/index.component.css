@@ -42,7 +42,6 @@ th,td {
     @keyframes spin {
       100% { transform: rotate(360deg); }
     }
-    
 
     th{ 
         position: sticky;
