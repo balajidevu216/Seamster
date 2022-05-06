@@ -20,13 +20,13 @@ export class OrdersService {
 constructor(private httpClient: HttpClient) { }
 
 getAll(): Observable<Orders[]> {
-  return this.httpClient.get<Orders[]>(this.apiURL + '/allProducts' )
+  return this.httpClient.get<Orders[]>(this.apiURL + '/allOrders' )
   .pipe( 
     catchError(this.errorHandler)
     )
 }
-create(products): Observable<Orders[]> {
-  return this.httpClient.post<Orders[]>(this.apiURL + '/ProductsInsert', JSON.stringify(products), this.httpOptions)
+create(orders): Observable<Orders[]> {
+  return this.httpClient.post<Orders[]>(this.apiURL + '/OrdersCreate', JSON.stringify(orders), this.httpOptions)
   .pipe(
     catchError(this.errorHandler)
   )

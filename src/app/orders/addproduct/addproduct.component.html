@@ -1,14 +1,14 @@
 <div *ngIf="order" class="container-fluid">
 
     <div class="header mt-1 p-1">
-          <h1>ADD ORDER</h1>
+          <h1>ADD PRODUCT</h1>
     <a href="http://localhost:4200/products/index">PRODUCTS LIST</a>
     &nbsp;
     <a href="http://localhost:4200/orders/index">ORDERS LIST</a>
     &nbsp;
-      <a (click)="openDialog()">ADD PRODUCT</a>
+      <a disabled>ADD PRODUCT</a>
     &nbsp;
-    <a disabled>ADD ORDER</a>
+    <a (click)="openDialogg()">ADD ORDER</a>
     </div>
   <hr>
     
@@ -31,22 +31,36 @@
               </div>
           --> 
               
+              <div class="form-group">
+                  <label for="name"><i>Product Name</i></label>
+                  <input 
+                      formControlName="name"
+                      id="name" 
+                      type="text" 
+                      class="form-control">
+      
+                  <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                      <div *ngIf="f.name.errors?.required">Product Name is required.</div>
+                      <div *ngIf="f.name.errors?.pattern">Enter only characters.</div>
+                      <div *ngIf="f.name.errors?.pattern">only characters are allowed.</div>
+                  </div>
+              </div>
               <br>
               <div class="form-group">
                   <label for=""><i>Product Type</i></label>
                   <select
-                  formControlName="Type"
+                  formControlName="type"
                   id="type"    
                   type="text" 
-                  class="form-control">
-                <option value="Tommy">Tommy</option>
-                <option value="Hilfiger">Hilfiger</option>    
-                <option value="Us Polo">U.S polo</option>
-                <option value="Flipkart">Flipkart</option>
-                <option value="Levi's">Levi's</option> 
-                <option value="TeamSpirit">Team Spirit</option>
-                <option value="Roadster">Roadster</option>
-                <option value="HRX">HRX</option>
+                      class="form-control">
+                      <option value="Tommy">Tommy</option>
+                  <option value="Hilfiger">Hilfiger</option>    
+                  <option value="Us Polo">U.S polo</option>
+                  <option value="Flipkart">Flipkart</option>
+                  <option value="Levi's">Levi's</option> 
+                  <option value="TeamSpirit">Team Spirit</option>
+                  <option value="Roadster">Roadster</option>
+                  <option value="HRX">HRX</option>
                   </select>
                   <div *ngIf="f.type.touched && f.type.invalid" class="alert alert-danger">
                       <div *ngIf="f.type.errors?.required">Product Type is required.</div>
@@ -56,7 +70,7 @@
           <br>
           
           <div class="but">
-              <a href="http://localhost:4200/orders/index" class="btn btn-primary">Back</a>
+              <a href="http://localhost:4200/products/index" class="btn btn-primary">Back</a>
               &nbsp;&nbsp;
               <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
           </div> 

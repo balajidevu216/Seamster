@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OrdersService } from '../orders.service';
+import { ProductsService } from '../products.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { AddproductComponent } from '../addproduct/addproduct.component';
 
 @Component({
   selector: 'app-addorder',
@@ -16,7 +15,7 @@ export class AddorderComponent implements OnInit {
 
   form: FormGroup;
   
-  constructor(public ordersService: OrdersService,
+  constructor(public productsService: ProductsService,
               private router: Router,
               private dialogRef : MatDialog) { }
 	
@@ -27,7 +26,7 @@ export class AddorderComponent implements OnInit {
     });
   }
   openDialog(){
-    this.dialogRef.open(AddproductComponent);
+    this.dialogRef.open(AddorderComponent);
     this.order = false;
   }
   
@@ -37,7 +36,7 @@ export class AddorderComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
-    this.ordersService.create(this.form.value).subscribe(res => {
+    this.productsService.create(this.form.value).subscribe(res => {
          console.log('Post created successfully!');
          this.router.navigateByUrl('products/index');
          confirm("Record created successfully!");

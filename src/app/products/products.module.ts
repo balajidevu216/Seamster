@@ -8,12 +8,14 @@ import { IndexComponent } from './index/index.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { AddorderComponent } from './addorder/addorder.component';
 
 @NgModule({
   declarations: [
        IndexComponent,
        AddproductComponent,
-       ViewdetailsComponent
+       ViewdetailsComponent,
+       AddorderComponent,
   ],
   imports: [
     ProductsRoutingModule,

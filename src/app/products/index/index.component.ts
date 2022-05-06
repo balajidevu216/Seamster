@@ -4,7 +4,7 @@ import { Products } from '../products';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddproductComponent } from '../addproduct/addproduct.component';
 import { MatDialog } from '@angular/material/dialog';
-import { AddorderComponent } from 'src/app/orders/addorder/addorder.component';
+import { AddorderComponent } from '../addorder/addorder.component';
 
 @Component({
   selector: 'app-index',
@@ -12,6 +12,7 @@ import { AddorderComponent } from 'src/app/orders/addorder/addorder.component';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+
 products: Products[] = [];
 loading: boolean = false;
 

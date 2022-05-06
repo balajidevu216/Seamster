@@ -8,12 +8,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { IndexComponent } from './index/index.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
        IndexComponent,
        AddorderComponent,
-       ViewdetailsComponent
+       ViewdetailsComponent,
+       AddproductComponent
   ],
   imports: [
     OrdersRoutingModule,
